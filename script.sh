@@ -92,4 +92,39 @@ case $# in
 
     else
        echo "Arguments inconnu ou erreur de syntaxe"
-     fi;; 
+     fi;;
+
+  3)
+    if [ "$1" = "add_article"  ] && [ "$3" = "add_img"  ]
+      then
+         echo "Il manque un argument."
+    else
+    echo "Erreur de syntaxe."
+    fi;;
+  4)
+    
+    if [ "$1" = "add_article" ] && [ "$3" = "add_img"  ]
+      then
+        # add_article_with_img "$2" "$4" "files/articles/images/"
+
+        ARTICLE_PATH=$2
+        IMGDIR_PATH="files/articles/images/"
+        IMG_PATH=$4
+        export ARTICLE_PATH
+        export IMGDIR_PATH
+        export IMG_PATH
+
+        if [ -e "files/fonctions/add_article_with_image.sh" ];then
+        /bin/bash files/fonctions/add_article_with_image.sh
+       else
+         echo "Fichier add_article_with_image.sh introuvable"
+       exit 0
+       fi 
+
+    else
+      echo "Erreur de syntaxe."
+    fi;;
+  *)
+    echo "Trop d'arguments";;
+esac
+
