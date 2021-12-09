@@ -1,5 +1,11 @@
+#!/bin/bash
+
+#fonction pour faire le build
+
 function build {
-  dossier=$1
+
+  dossier=$BUILD_PATH
+
 if [[ -d "$dossier" ]]; then  
   wget -q --spider http://google.com
   if [ $? -eq 0 ]; then
@@ -11,11 +17,30 @@ if [[ -d "$dossier" ]]; then
   fi
    
    cp "check.sh" "$dossier"
-   cp "script.sh" "$dossier" 
+   cp "script.sh" "$dossier"
+   cp -avr "files/fonctions" "$dossier" 
    cd "$dossier" || exit
+   
    ./check.sh
-   create   
+
+   mv "fonctions" "files" 
+
+  # create   
+  
+   if [ -e "files/fonctions/create.sh" ];then
+    /bin/bash ./files/fonctions/create.sh
+    else
+    echo "Fichier create.sh introuvable"
+    exit 0
+  fi
+  
   else
    echo "dossier $dossier introuvable"
 fi
 }
+
+#fin de la fonction du build
+
+#appel à la fonction
+
+build
