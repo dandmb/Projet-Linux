@@ -39,3 +39,57 @@ case $# in
      else
        echo  "Arguments inconnue ou erreur de syntaxe"
      fi;;
+     
+     2) 
+
+    if [ "$1" = "add_img" ]
+      then
+
+       # add_image "$2" "images/"
+
+        IMG_PATH=$2
+        IMGDIR_PATH="images/"
+        export IMG_PATH
+        export IMGDIR_PATH
+
+       if [ -e "files/fonctions/add_image.sh" ];then
+        /bin/bash files/fonctions/add_image.sh
+       else
+         echo "Fichier add_image.sh introuvable"
+       exit 0
+       fi 
+
+    elif [ "$1" = "add_article" ]
+      then
+
+        #add_article "$2"
+
+        ARTICLE_PATH=$2
+        export ARTICLE_PATH
+
+        if [ -e "files/fonctions/add_article.sh" ];then
+        /bin/bash files/fonctions/add_article.sh
+       else
+         echo "Fichier add_article.sh introuvable"
+       exit 0
+       fi 
+    
+    elif [ "$1" = "build" ]
+      then
+
+        #build "$2"
+
+        BUILD_PATH=$2
+        export BUILD_PATH
+
+        if [ -e "files/fonctions/build.sh" ];then
+        /bin/bash files/fonctions/build.sh
+       else
+         echo "Fichier build.sh introuvable"
+       exit 0
+       fi
+
+
+    else
+       echo "Arguments inconnu ou erreur de syntaxe"
+     fi;; 
