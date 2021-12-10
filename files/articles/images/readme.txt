@@ -1,0 +1,1 @@
+Ceci est le dossier de stockage des images liées aux articles
