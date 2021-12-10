@@ -116,6 +116,12 @@ if [ -d "files" ];then
   else
   mkdir -p articles/images
   fi
+  
+  if [ -d "fonctions" ];then
+  :
+  else
+  mkdir fonctions
+  fi
   #fin de la verification des sous dossiers
 
 else
