@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#en cas d'execution du script
-
 case $# in
 
   0) 
@@ -39,8 +37,7 @@ case $# in
      else
        echo  "Arguments inconnue ou erreur de syntaxe"
      fi;;
-     
-     2) 
+  2) 
 
     if [ "$1" = "add_img" ]
       then
@@ -58,6 +55,23 @@ case $# in
          echo "Fichier add_image.sh introuvable"
        exit 0
        fi 
+
+    elif [ "$1" = "delete_img" ]
+      then
+
+       # delete_image "$2" "images/"
+
+        IMG_PATH="images/$2"
+        export IMG_PATH
+
+       if [ -e "files/fonctions/delete_image.sh" ];then
+        /bin/bash files/fonctions/delete_image.sh
+       else
+         echo "Fichier delete_image.sh introuvable"
+       exit 0
+      fi 
+
+
 
     elif [ "$1" = "add_article" ]
       then
@@ -92,8 +106,7 @@ case $# in
 
     else
        echo "Arguments inconnu ou erreur de syntaxe"
-     fi;;
-
+     fi;;  
   3)
     if [ "$1" = "add_article"  ] && [ "$3" = "add_img"  ]
       then
@@ -127,4 +140,3 @@ case $# in
   *)
     echo "Trop d'arguments";;
 esac
-
