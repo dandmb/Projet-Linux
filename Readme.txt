@@ -5,7 +5,9 @@ Téléchargez le dossier de base du projet avec la commande :
 
 git clone https://github.com/dandmb/Projet-Linux-admin.git
 
-ensuite executez la commande
+ensuite executez les commandes
+
+chmod 777 script.sh
 
 ./script.sh build dossier/dossier.....
 
