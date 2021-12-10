@@ -16,6 +16,8 @@ function help {
   echo ""
   echo "- ./script.sh add_image -le chemain de l'image- permet d'ajouter une image au blog"
   echo ""
+  echo "- ./script.sh delete_image -le nom de l'image- permet de supprimer une image du blog"
+  echo ""
   echo "- ./script.sh add_article -le chemain de l'article- permet d'ajouter un article"
   echo ""
   echo "- ./script.sh add_article -le chemain de l'article- add_image -le chemain de l'image- permet d'ajouter un article lié à une image"

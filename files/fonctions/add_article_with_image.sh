@@ -34,6 +34,12 @@ function add_article_with_img {
         echo "$nom_fichier;$nom_image">>files/data.csv
         echo "Article ajouté. "
 
+        if [ -e "files/fonctions/create.sh" ];then
+        /bin/bash files/fonctions/create.sh
+       else
+         echo "Fichier create.sh introuvable"
+       fi
+
       else
         echo "Veuillez mettre le lien d'un fichier txt ou csv"
       fi

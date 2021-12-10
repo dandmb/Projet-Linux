@@ -12,7 +12,14 @@ function add_article {
         cp "$ARTICLE_PATH" files/articles/
         nom_fichier=$(basename "${1}")
         echo "$nom_fichier;null">>files/data.csv
-        echo "Article ajouté. "
+        echo "Article ajouté."
+
+        if [ -e "files/fonctions/create.sh" ];then
+        /bin/bash files/fonctions/create.sh
+       else
+         echo "Fichier create.sh introuvable"
+       fi
+
       else
         echo "Veuillez mettre le lien d'un fichier txt ou csv"
       fi

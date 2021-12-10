@@ -40,14 +40,10 @@ function create {
       do
         echo "<div class='col col-md-4' >">>web.html        
 
-        if [ "${tab_photo[$i]}" = "null" ];then
-        :
-        else
-          echo "<img style='height: 300px; width: 300px;margin: 10px;'  src='""files/articles/images/${tab_photo[$i]}""'>" >> web.html 
-        fi
+        echo "<img style='height: 300px; width: 300px;margin: 10px;'  src='""files/articles/images/${tab_photo[$i]}""'>">>web.html 
 
         echo "<p  style=' width: 300px;margin: 10px;'>">>web.html
-        cat "files/articles/${tab_article[$i]}" >> web.html
+        cat "files/articles/${tab_article[$i]}">>web.html
         echo "</p>">>web.html
         echo "</div>">>web.html
         echo "<br>">>web.html
