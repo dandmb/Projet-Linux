@@ -10,7 +10,7 @@ function add_article {
     declare -a extensions=( "txt" "csv" )
       if [[ " ${extensions[*]} " =~ $ext ]]; then
         cp "$ARTICLE_PATH" files/articles/
-        nom_fichier=$(basename "${$ARTICLE_PATH}")
+        nom_fichier=$(basename "${ARTICLE_PATH}")
         echo "$nom_fichier;null">>files/data.csv
         echo "Article ajouté."
 
