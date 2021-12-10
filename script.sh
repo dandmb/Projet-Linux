@@ -1,5 +1,8 @@
 #!/bin/bash
 
+chmod 777 check.sh
+chmod 777 files/fonctions/build.sh
+
 case $# in
 
   0) 
